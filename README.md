@@ -1,104 +1,41 @@
+# Medical Analyzer Bot with Retrieval-based QA
 
+## Overview
 
-# Llama2 Medical Bot
+This repository contains the implementation of a Medical Bot designed to answer user queries based on pre-existing medical documents. The bot uses a retrieval-based question-answering (QA) approach, incorporating language models and vector stores for efficient information retrieval.
 
-The Llama2 Medical Bot is a powerful tool designed to provide medical information by answering user queries using state-of-the-art language models and vector stores. This README will guide you through the setup and usage of the Llama2 Medical Bot.
+## Tech Stack
 
-## Table of Contents
+- **Language Model**: [TheBloke/Llama-2-7B-Chat-GGML](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML) - A large language model for conversational AI.
+- **Embeddings Model**: [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) - Hugging Face embeddings model for transforming sentences into vectors.
+- **Vector Store**: [FAISS](https://github.com/facebookresearch/faiss) - A library for efficient similarity search and clustering of dense vectors.
+- **Document Loaders**: [PyPDFLoader](langchain_community/document_loaders.py), [DirectoryLoader](langchain_community/document_loaders.py) - Loaders for extracting text from PDFs and directories of documents.
+- **Text Splitter**: [RecursiveCharacterTextSplitter](langchain/text_splitter.py) - Splits documents into chunks for efficient processing.
 
-- [Introduction](#langchain-medical-bot)
-- [Table of Contents](#table-of-contents)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Project Structure
 
-## Prerequisites
-
-Before you can start using the Llama2 Medical Bot, make sure you have the following prerequisites installed on your system:
-
-- Python 3.6 or higher
-- Required Python packages (you can install them using pip):
-    - langchain
-    - chainlit
-    - sentence-transformers
-    - faiss
-    - PyPDF2 (for PDF document loading)
-
-## Installation
-
-1. Clone this repository to your local machine.
-
-    ```bash
-    git clone https://github.com/your-username/langchain-medical-bot.git
-    cd langchain-medical-bot
-    ```
-
-2. Create a Python virtual environment (optional but recommended):
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use: venv\Scripts\activate
-    ```
-
-3. Install the required Python packages:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Download the required language models and data. Please refer to the Langchain documentation for specific instructions on how to download and set up the language model and vector store.
-
-5. Set up the necessary paths and configurations in your project, including the `DB_FAISS_PATH` variable and other configurations as per your needs.
-
-## Getting Started
-
-To get started with the Llama2 Medical Bot, you need to:
-
-1. Set up your environment and install the required packages as described in the Installation section.
-
-2. Configure your project by updating the `DB_FAISS_PATH` variable and any other custom configurations in the code.
-
-3. Prepare the language model and data as per the Langchain documentation.
-
-4. Start the bot by running the provided Python script or integrating it into your application.
+- `model.py`: Python script defining the QA model, retrieval chain, and functions to load and utilize the models.
+- `ingest.py`: Python script for ingesting medical documents, creating vector representations, and saving them using FAISS.
+- `data/`: Directory containing medical documents in PDF format.
+- `vectorstore/`: Directory to store the FAISS vector database (`db_faiss`).
 
 ## Usage
 
-The Llama2 Medical Bot can be used for answering medical-related queries. To use the bot, you can follow these steps:
+### Setting Up the Vector Database
 
-1. Start the bot by running your application or using the provided Python script.
+1. Ensure the required Python dependencies are installed: `pip install -r requirements.txt`.
+2. Run `ingest.py` to ingest medical documents and create the FAISS vector database.
 
-2. Send a medical-related query to the bot.
+### Running the Medical Bot
 
-3. The bot will provide a response based on the information available in its database.
+1. Install the necessary dependencies: `pip install -r requirements.txt`.
+2. Run `model.py` to start the Medical Bot.
+3. The bot will prompt users for queries, and it will provide answers based on the pre-existing medical documents.
 
-4. If sources are found, they will be provided alongside the answer.
+## Contributions
 
-5. The bot can be customized to return specific information based on the query and context provided.
-
-## Contributing
-
-Contributions to the Llama2 Medical Bot are welcome! If you'd like to contribute to the project, please follow these steps:
-
-1. Fork the repository to your own GitHub account.
-
-2. Create a new branch for your feature or bug fix.
-
-3. Make your changes and ensure that the code passes all tests.
-
-4. Create a pull request to the main repository, explaining your changes and improvements.
-
-5. Your pull request will be reviewed, and if approved, it will be merged into the main codebase.
+Contributions are welcome! Feel free to open issues, suggest improvements, or submit pull requests.
 
 ## License
 
-This project is licensed under the MIT License.
-
----
-
-For more information on how to use, configure, and extend the Llama2 Medical Bot, please refer to the Langchain documentation or contact the project maintainers.
-
-Happy coding with Llama2 Medical Bot! 🚀
+This project is licensed under the [MIT License](LICENSE).
