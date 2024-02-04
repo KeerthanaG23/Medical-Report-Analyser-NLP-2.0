@@ -24,6 +24,10 @@ The idea involves developing an end-to-end application for medical report analys
 - `data/`: Directory containing medical report in PDF format.
 - `vectorstore/`: Directory to store the FAISS vector database (`db_faiss`).
 
+
+## Architecture
+![Comsys](https://github.com/KeerthanaG23/Medical-Report-Analyser/assets/116378322/4538db50-8653-4466-a869-9142debc0fb3)
+
 ## Usage
 
 ## Installation
