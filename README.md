@@ -6,8 +6,8 @@ This repository contains the implementation of a Medical Bot designed to answer 
 The idea involves developing an end-to-end application for medical report analysis using state-of-the-art Natural Language Processing (NLP) technology. The application aims to streamline the interpretation of medical reports, ensuring faster and more accurate diagnoses. Additionally, a conversational agent will be implemented to answer queries related to the analysis.
 
 ## Team Members:
-1. **Keerthana G** --> Shiv Nadar University, Chennai --> nagakarthick2004@gmail.com
-2. **Karthick NG** --> Shiv Nadar University, Chennai --> kethykrish23@gmail.com
+1. **Keerthana G** --> Shiv Nadar University, Chennai --> kethykrish23@gmail.com
+2. **Karthick NG** --> Shiv Nadar University, Chennai --> nagakarthick2004@gmail.com 
    
 ## Tech Stack
 
