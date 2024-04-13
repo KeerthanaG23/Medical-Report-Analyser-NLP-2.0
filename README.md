@@ -1,4 +1,4 @@
-# Medical Analyzer Bot with Retrieval-based QA
+# Medical Analyzer Bot with Retrieval-based QA Chatbot
 
 ## Overview
 
